@@ -29,9 +29,9 @@
           console.log(img);
           console.log(photo.getIn['data', 'alt']);
           return h('div', {key:index},
-                  h('img', 
+                  h('img', {},
                     {src: '/images/bebe2.jpg'})
-              )
+              );
         })
       }
     })
