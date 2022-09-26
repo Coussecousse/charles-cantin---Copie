@@ -17,6 +17,7 @@
         console.log(this.props.entry);
         let image = entry.getIn(['data','pic']);
         let bg = this.props.getAsset(image);
+        console.log(bg)
         return h('div', {},
         entry.map(function(photo, index) {
           console.log(photo);
