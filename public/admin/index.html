@@ -24,18 +24,21 @@
         // console.log(this.props.widgetsFor('data'));
         // console.log(this.props.widgetsFor('images'))
         return h('div', {},
-          h('h1', {}, 'Test'),
-          this.props.widgetsFor('images').map(function(photo, index) {
-            console.log(photo);
-            let img = photo.getIn(['data', 'pic']);
-            console.log(img);
-            console.log(photo.getIn['data', 'alt']);
-            return h('div', {key:index},
-                    h('img', {},
-                      {src: '/images/bebe2.jpg'})
-                );
-          })
-          )
+          h('h1', {}, 'TEST DE MERDE')
+        );
+        // return h('div', {},
+        //   h('h1', {}, 'Test'),
+        //   this.props.widgetsFor('images').map(function(photo, index) {
+        //     console.log(photo);
+        //     let img = photo.getIn(['data', 'pic']);
+        //     console.log(img);
+        //     console.log(photo.getIn['data', 'alt']);
+        //     return h('div', {key:index},
+        //             h('img', {},
+        //               {src: '/images/bebe2.jpg'})
+        //         );
+        //   })
+        //   )
       }
     })
     // photo.getIn['data', 'alt']
