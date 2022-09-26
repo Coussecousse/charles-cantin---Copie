@@ -33,15 +33,15 @@
                 return "size-2";
         }
           }
-        return h('div', {"className" : "container"},
+        return h('div', { className  : "container"},
 
           // h('h1', {"className": "container"}, 'TEST DE MERDE'),
-          h('div', {"clasName":"picsContainer"},
+          h('div', { className :"picsContainer"},
           this.props.widgetsFor('images').map(function(photo, index) {
             console.log(photo)
             let path = photo.getIn(['data', 'pic']);
 
-            return h('div', {key:index, "className": "size-3"}, 
+            return h('div', {key:index, className : "size-3"}, 
               h('img', {src:path}, )
               );
             })
