@@ -21,8 +21,6 @@
         console.log('pic', pic);
         let bg = this.props.getAsset(pic);
         console.log('bg',bg);
-        // console.log(this.props.widgetsFor('data'));
-        // console.log(this.props.widgetsFor('images'))
         return h('div', {},
           h('h1', {}, 'TEST DE MERDE'),
           this.props.widgetsFor('images').map(function(photo, index) {
@@ -44,8 +42,9 @@
         //         );
         //   })
         //   )
-      }
-    })
+      })
+    )   
+    }})
     // photo.getIn['data', 'alt']
 
     CMS.registerPreviewTemplate("gallerie", TemplateGallery);
