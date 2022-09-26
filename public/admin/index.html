@@ -27,7 +27,6 @@
           console.log(photo);
           let img = photo.getIn(['data', 'pic']);
           console.log(img);
-          img = this.props.getAsset(img);
           console.log(photo.getIn['data', 'alt']);
           return h('div', {key:index},
                   h('img', 
