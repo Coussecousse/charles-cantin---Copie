@@ -30,12 +30,12 @@
           console.log(photo.getIn['data', 'alt']);
           return h('div', {key:index},
                   h('img', 
-                    {src: img.toString(), alt:photo.getIn['data', 'alt']})
+                    {src: img.toString()})
               )
         })
       }
     })
-    
+    // photo.getIn['data', 'alt']
 
     CMS.registerPreviewTemplate("gallerie", TemplateGallery);
   </script>
