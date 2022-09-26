@@ -11,9 +11,19 @@
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   <script>
 
-    import CMSGallery from '../src/CMS-template/CMSGallery';
+    const TemplateGallery = createClass({
+      render: function() {
+        return h('div', {},
+        this.props.widgetFor('images').map(function(photo, index) {
+          console.log(photo);
+          return h('div', {key:index},
+            // h('img', {src: photo.getIn([''])}))})
+          )
+      }))
+    }})
+    
 
-    CMS.registerPreviewTemplate("posts", ({entry}) => (<CMSGallery {...entry.toJS().data} />));
+    CMS.registerPreviewTemplate("posts", TemplateGallery);
   </script>
 </body>
 </html>
