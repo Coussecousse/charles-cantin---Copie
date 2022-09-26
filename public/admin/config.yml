@@ -11,7 +11,7 @@ collections:
     widget: "list"
     folder: "data/gallery"
     slug: "{{year}}-{{month}}-{{day}}--{{second}}"
-    field:
+    fields:
       - label: "Images"
         name: "images"
         widget: list
