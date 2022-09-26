@@ -20,4 +20,20 @@ images:
     posYMobile: 50%
     alt: bebe
     pic: /images/bebe2.jpg
+  - pic: /images/couple1.jpg
+    size: 2/2
+    alt: couple
+    posX: 50%
+    posY: 50%
+    posXMobile: 50%
+    posYMobile: 50%
+    posRow: 0
+  - pic: /images/evenement-concert1.jpg
+    size: 1/2
+    alt: concert
+    posX: 50%
+    posY: 50%
+    posXMobile: 50%
+    posYMobile: 50%
+    posRow: 0
 ---
