@@ -21,9 +21,9 @@
         console.log('pic', pic);
         let bg = this.props.getAsset(pic);
         console.log('bg',bg);
-        console.log(this.props.widgetFor('data'));
-        console.log(this.props.widgetFor('images'))
-        this.props.widgetFor('images').map(function(photo, index) {
+        console.log(this.props.widgetsFor('data'));
+        console.log(this.props.widgetsFor('images'))
+        this.props.widgetsFor('images').map(function(photo, index) {
           console.log(photo)
         })
         return h('div', {},
