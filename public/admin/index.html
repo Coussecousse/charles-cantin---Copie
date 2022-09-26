@@ -22,8 +22,8 @@
         console.log('pic', pic);
         let bg = this.props.getAsset(pic);
         console.log('bg',bg);
-        function size(){
-          switch(photogetIn(['data', 'size'])){
+        function size(photo){
+          switch(photo){
             case '3/3' : 
                 return "size-4";
             case '2/3' : 
@@ -34,7 +34,6 @@
                 return "size-2";
         }
           }
-        
         return h('div', {"className" : "container"},
 
           // h('h1', {"className": "container"}, 'TEST DE MERDE'),
@@ -44,7 +43,7 @@
             let path = photo.getIn(['data', 'pic']);
 
             return h('div', {key:index}, 
-              h('img', {src:path}, {"className": size()})
+              h('img', {src:path}, {"className": size(photo.getIn(['data', 'size']))})
               );
             })
           )
