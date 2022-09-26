@@ -12,9 +12,9 @@ collections:
     folder: "data/gallery-test"
     create: false
     delete: false
+    identifier_field: label
     fields:
       - label: "Images"
-        identifier_field: label
         name: "images"
         widget: list
         fields: 
