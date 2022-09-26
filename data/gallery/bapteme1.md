@@ -18,4 +18,14 @@ images:
     posYMobile: 50%
     alt: lalala
     pic: /images/bebe1.jpg
+  - catégories:
+      - llaa
+    size: 2/2
+    posX: 50%
+    posY: 50%
+    posXMobile: 50%
+    posRow: 2
+    posYMobile: 50%
+    alt: lala
+    pic: /images/bebe2.jpg
 ---
