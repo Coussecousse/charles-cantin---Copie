@@ -1,0 +1,34 @@
+.FiltredCategoriesStyle {
+    margin-right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-weight: var(--fw-600);
+}
+
+.FiltredCategoriesStyle li {
+    min-height: 25px;;
+    padding: 0 .4rem 0 .6rem;
+    display: flex;
+    gap: .3rem;
+    align-items: center;
+    border: solid var(--color-secondary) 1px;
+    background: var(--color-secondary);
+    border-radius: 29px;
+    text-align: center;
+    color: var(--color-primary);
+}
+.FiltredCategoriesStyle li .LiFiltred button{
+    display: flex;
+}
+.FiltredCategoriesStyle li .LiFiltred i {
+    align-items: center;
+}
+.FiltredCategoriesStyle button {
+    border: none;
+    border: solid 1px var(--color-secondary);
+    border-radius: 50% ;
+    background: var(--color-primary);
+    color: var(--color-secondary);
+}

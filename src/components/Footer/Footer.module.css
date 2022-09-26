@@ -1,0 +1,17 @@
+.FooterContainer {
+    height : 90%;
+    max-width : 500px;
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .8rem;
+}
+
+.Media {
+    color: var(--color-secondary);
+    font-size: 2rem;
+    display: flex;
+    gap: 2rem;
+}

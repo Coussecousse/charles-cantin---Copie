@@ -1,0 +1,10 @@
+.HeaderContainer {
+    width: 90%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.HeaderContainer > * {
+    margin: .5rem 0;
+}

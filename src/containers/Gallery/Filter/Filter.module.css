@@ -1,0 +1,36 @@
+.Filter {
+    display: flex;
+    justify-content: flex-end;
+}
+.Filter .InputDiv {
+    position: relative;
+    width: 100%;
+    max-width: 150px;
+}
+.Filter input {
+    max-width: 150px;
+    max-height: 30px;
+    background-color: var(--color-primary);
+    border: solid var(--color-secondary) 1px;
+    border-radius: 29px;
+    padding : .2rem .8rem;
+    font-size: 1.1rem;
+    font-family: var(--ff-primary);
+    color: var(--color-secondary);
+}
+.Filter input::placeholder {
+    color: var(--color-secondary);
+}
+.Filter input, .Filter input::placeholder {
+    opacity: .8;
+}
+
+.Filter input:focus, .Filter .ActiveInput {
+    opacity: 1;
+    border-radius: 20px 20px 0 0;
+}
+
+.Filter input:focus ,.Filter .ActiveInput {
+    background: var(--color-secondary);
+    color: var(--color-700);
+}

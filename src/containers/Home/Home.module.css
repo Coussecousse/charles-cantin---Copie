@@ -1,0 +1,10 @@
+
+.Home {
+    color: var(--color-secondary);
+    width : 100%;
+    display: flex;
+}
+
+.TitleContainer {
+    margin: auto;
+}
