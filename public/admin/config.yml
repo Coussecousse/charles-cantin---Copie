@@ -10,7 +10,8 @@ collections:
     label: "Gallerie"
     widget: "list"
     folder: "data/gallery-test"
-    slug: "{{year}}-{{month}}-{{day}}--{{second}}"
+    create: false
+    delete: false
     fields:
       - label: "Images"
         identifier_field: label
