@@ -15,9 +15,12 @@
       render: function() {
         let entry = this.props.entry
         console.log(this.props.entry);
-        let image = entry.getIn(['data','pic']);
-        let bg = this.props.getAsset(image);
-        console.log(bg)
+        let image = entry.getIn(['data','images']);
+        console.log('image', image);
+        let pic = entry.getIn(['images', 'pic']);
+        console.log('pic', pic);
+        let bg = this.props.getAsset(pic);
+        console.log('bg',bg)
         return h('div', {},
         entry.map(function(photo, index) {
           console.log(photo);
