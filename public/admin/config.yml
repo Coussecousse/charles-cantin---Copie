@@ -13,6 +13,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}--{{second}}"
     fields:
       - label: "Images"
+        identifier_field: label
         name: "images"
         widget: list
         fields: 
