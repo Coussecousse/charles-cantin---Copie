@@ -1,0 +1,31 @@
+html, body {
+    width : 100vw;
+    box-sizing: border-box;
+}
+.container {
+    width: 100%;
+    max-width : 800px;
+    margin: 0 auto;
+}
+.picsContainer {
+    margin: 2rem 0;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: .5rem;
+}
+
+.picsContainer div > img {
+    object-fit: cover;
+    max-width: 100%;
+    min-height: 400px;
+}
+.size-1 {
+    grid-column: 'span 1',
+}
+.size-2 {
+    grid-column: 'span 2';
+}
+.size-3 {
+    grid-column: 'span 3';
+}

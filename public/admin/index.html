@@ -10,6 +10,7 @@
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   <script>
+    CMS.registerPreviewStyle("/style.css");
 
     const TemplateGallery = createClass({
       render: function() {
@@ -22,18 +23,31 @@
         let bg = this.props.getAsset(pic);
         console.log('bg',bg);
         function size(){
-          
+          switch(photogetIn(['data', 'size'])){
+            case '3/3' : 
+                return "size-4";
+            case '2/3' : 
+                return "size-2";
+            case '1/3': 
+                return "size-1";
+            default:
+                return "size-2";
         }
-        return h('div', {},
-          h('h1', {}, 'TEST DE MERDE'),
+          }
+        
+        return h('div', {"className" : "container"},
+
+          // h('h1', {"className": "container"}, 'TEST DE MERDE'),
+          h('div', {"clasName":"picsContainer"},
           this.props.widgetsFor('images').map(function(photo, index) {
             console.log(photo)
             let path = photo.getIn(['data', 'pic']);
 
             return h('div', {key:index}, 
-              h('img', {src:path})
+              h('img', {src:path}, {"className": size()})
               );
-          })
+            })
+          )
         )   
       }
     })
