@@ -9,7 +9,7 @@ collections:
   - name: "gallerie"
     label: "Gallerie"
     widget: "list"
-    folder: "data/gallery"
+    folder: "data/gallery-test/gallery.md"
     slug: "{{year}}-{{month}}-{{day}}--{{second}}"
     fields:
       - label: "Images"
