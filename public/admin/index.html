@@ -25,9 +25,12 @@
         // console.log(this.props.widgetsFor('images'))
         this.props.widgetsFor('images').map(function(photo, index) {
           console.log(photo);
+          let img = photo.getInt(['data', 'pic']);
+          img = this.props.getAsset(img);
           return h('div', {key:index},
-            h('img', 
-              {src:photo.getIn(['data', 'pic']), alt:photo.getIn['data', 'alt']}))
+                  h('img', 
+                    {src: img.toString(), alt:photo.getIn['data', 'alt']})
+              )
         })
       }
     })
