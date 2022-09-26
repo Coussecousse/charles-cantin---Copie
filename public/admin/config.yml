@@ -18,7 +18,7 @@ collections:
         fields: 
           - {label: Photo, name: pic, widget: image}
           - {label: Alt, name: alt, widget: string}
-          - {label: Catégorie(s), name: catégories, widget: list}
+          - {label: Catégorie(s), name: catégories, widget: list, field: {label: Catégorie, name: catégorie, widget: string}}
           - {label: Size, name: size, widget: select, options: [1/2, 2/2, 3/3]}
           - {label: PosX, name: posX, widget: string}
           - {label: PosY, name: posY, widget: string}
