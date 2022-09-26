@@ -17,7 +17,7 @@
         console.log(this.props.entry);
         let image = entry.getIn(['data','images']);
         console.log('image', image);
-        let pic = entry.getIn(['images', 'pic']);
+        let pic = image.getIn(['images', 'pic']);
         console.log('pic', pic);
         let bg = this.props.getAsset(pic);
         console.log('bg',bg)
