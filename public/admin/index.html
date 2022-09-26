@@ -40,8 +40,8 @@
           this.props.widgetsFor('images').map(function(photo, index) {
             console.log(photo)
             let path = photo.getIn(['data', 'pic']);
-
-            return h('div', {key:index, className : "size-3"}, 
+            let size = size(photo.getIn(['data', 'size']));
+            return h('div', {key:index, className : size}, 
               h('img', {src:path}, )
               );
             })
