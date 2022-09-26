@@ -26,7 +26,7 @@
           this.props.widgetsFor('images').map(function(photo, index) {
             console.log(photo)
             let path = photo.getIn(['data', 'pic']);
-            console.log(typoeof(path));
+            console.log(typeof path);
             return h('div', {key:index}, 
               
           
