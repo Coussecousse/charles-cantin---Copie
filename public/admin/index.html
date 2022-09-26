@@ -24,16 +24,13 @@
         // console.log(this.props.widgetsFor('data'));
         // console.log(this.props.widgetsFor('images'))
         this.props.widgetsFor('images').map(function(photo, index) {
-          console.log(photo)
-        })
-        return h('div', {},
-        entry.map(function(photo, index) {
           console.log(photo);
           return h('div', {key:index},
-          // h('img', {src: photo.getIn([''])}))})
-          )
-        }))
-    }})
+            h('img', 
+              {src:photo.getIn(['data', 'pic']), alt:photo.getIn['data', 'alt']}))
+        })
+      }
+    })
     
 
     CMS.registerPreviewTemplate("gallerie", TemplateGallery);
