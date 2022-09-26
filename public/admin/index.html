@@ -42,8 +42,8 @@
             console.log(photo)
             let path = photo.getIn(['data', 'pic']);
 
-            return h('div', {key:index}, 
-              h('img', {src:path, "className": "size-3"}, )
+            return h('div', {key:index, "className": "size-3"}, 
+              h('img', {src:path}, )
               );
             })
           )
