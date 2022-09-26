@@ -43,7 +43,7 @@
             let path = photo.getIn(['data', 'pic']);
 
             return h('div', {key:index}, 
-              h('img', {src:path}, {"className": size(photo.getIn(['data', 'size']))})
+              h('img', {src:path}, )
               );
             })
           )
@@ -51,7 +51,7 @@
       }
     })
     // photo.getIn['data', 'alt']
-
+    // {"className": size(photo.getIn(['data', 'size']))}
     CMS.registerPreviewTemplate("gallerie", TemplateGallery);
   </script>
 </body>
