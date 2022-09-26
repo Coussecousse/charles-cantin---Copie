@@ -13,10 +13,12 @@
 
     const TemplateGallery = createClass({
       render: function() {
-        let data = this.props.entry
+        let entry = this.props.entry
         console.log(this.props.entry);
+        let image = entry.getIn(['data','pic']);
+        let bg = this.props.getAsset(image);
         return h('div', {},
-        this.props.entry.map(function(photo, index) {
+        entry.map(function(photo, index) {
           console.log(photo);
           return h('div', {key:index},
             // h('img', {src: photo.getIn([''])}))})
