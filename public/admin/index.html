@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>CMS.registerPreviewStyle("/styles.css");</script>
 </head>
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
@@ -52,7 +51,7 @@
     })
     // photo.getIn['data', 'alt']
     // {"className": size(photo.getIn(['data', 'size']))}
-    CMS.registerPreviewStyle("/styles.css");
+    CMS.registerPreviewStyle("public/admin/styles.css");
     CMS.registerPreviewTemplate("gallerie", TemplateGallery);
   </script>
 </body>
