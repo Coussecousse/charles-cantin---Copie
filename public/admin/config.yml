@@ -12,7 +12,7 @@ collections:
     folder: "data/gallery-test"
     create: false
     delete: false
-    identifier_field: label
+    identifier_field: "Photos"
     fields:
       - label: "Images"
         name: "images"
