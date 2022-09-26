@@ -43,7 +43,7 @@
             let path = photo.getIn(['data', 'pic']);
             let size = getSize(photo.getIn(['data', 'size']));
             console.log(size);
-            return h('div', {key:index, className : 'size-3'}, 
+            return h('div', {key:index, className : size }, 
               h('img', {src:path}, )
               );
             })
