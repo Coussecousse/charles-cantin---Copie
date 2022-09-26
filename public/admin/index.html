@@ -13,6 +13,7 @@
 
     const TemplateGallery = createClass({
       render: function() {
+        console.log(this.props.entry);
         return h('div', {},
         this.props.widgetFor('images').map(function(photo, index) {
           console.log(photo);
