@@ -21,11 +21,11 @@ html, body {
     min-height: 400px;
 }
 .size-1 {
-    grid-column: 'auto / span 1',
+    grid-column: span 1;
 }
 .size-2 {
-    grid-column: 'auto / span 2';
+    grid-column: span 2;
 }
 .size-3 {
-    grid-column: 'auto / span 3';
+    grid-column: span 3;
 }
