@@ -13,8 +13,8 @@ images:
   - pic: /images/evenement-concert1.jpg
     size: 1/3
     alt: concert
-    posX: 73%
-    posY: 50%
+    posX: 50
+    posY: 50
     posXMobile: 50%
     posYMobile: 50%
     posRow: 0
