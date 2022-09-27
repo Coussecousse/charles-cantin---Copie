@@ -36,13 +36,12 @@
 
         return h('div', { className  : "container"},
 
-          // h('h1', {"className": "container"}, 'TEST DE MERDE'),
           h('div', { className :"picsContainer"},
           this.props.widgetsFor('images').map(function(photo, index) {
             console.log(photo)
             let path = photo.getIn(['data', 'pic']);
             let size = getSize(photo.getIn(['data', 'size']));
-            let position = photo.getIn(['data','posX']) + ' ' + photo.getIn(['data', 'posY']);
+            let position = photo.getIn(['data','posX']) + '% ' + photo.getIn(['data', 'posY']) + '%';
             console.log(position)
             console.log(size);
             return h('div', {key:index, className : size }, 
