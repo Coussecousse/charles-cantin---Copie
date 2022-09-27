@@ -3,11 +3,13 @@ html, body {
     box-sizing: border-box;
 }
 .container-desktop {
+    background-color: hsl(205, 13%, 33%);
     width: 100%;
     max-width : 800px;
     margin: 0 auto;
 }
 .container-mobile {
+    background-color: hsl(205, 13%, 33%);
     width: 100%;
     max-width : 320px;
     margin: 0 auto;

@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 // Création des routes vers les fichiers
-const dirPathGallery  = path.join(__dirname, "../data/gallery");
+const dirPathGallery  = path.join(__dirname, "../data/gallery-test");
 const dirPathServices = path.join(__dirname, "../data/services");
 const dirPathGlobal   = path.join(__dirname, "../data/global");
 
