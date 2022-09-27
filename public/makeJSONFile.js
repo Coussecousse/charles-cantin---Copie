@@ -40,8 +40,14 @@ const getGalleryImages = (path, list, fileName) => {
             let obj = {};
             fs.readFile(`${path}/${file}`, "utf8", (err, contents) => {
                 const getMetadataIndices = (acc, element, i) => {
-                    if (/^---/.test(element)) {
-                        acc.push(i);
+                    if (fileName == "gallery") {
+                        if (/^-/.test(element)) {
+                            acc.push(i)
+                        }
+                    } else {
+                        if (/^---/.test(element)) {
+                            acc.push(i);
+                        }
                     }
                     return acc;
                 }
@@ -55,6 +61,10 @@ const getGalleryImages = (path, list, fileName) => {
                     }
                 }                
                 const lines = contents.split('\n');
+                console.log('lines=', lines)
+                if (fileName == "gallery"){
+                    const metadataIndices = lines.reduce(getMetadataIndicesGaller)
+                }
                 const metadataIndices = lines.reduce(getMetadataIndices, []);
                 metadata = parseMetadata({lines, metadataIndices});
                 console.log(metadata);
