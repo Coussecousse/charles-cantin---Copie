@@ -11,8 +11,6 @@
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   <script>
     function getSize(photo){
-      console.log(photo)
-      console.log(typeof photo)
       switch(photo){
         case '3/3' :
             return "size-3";
@@ -44,9 +42,11 @@
             console.log(photo)
             let path = photo.getIn(['data', 'pic']);
             let size = getSize(photo.getIn(['data', 'size']));
+            let position = photo.getIn(['data','posX']) + ' ' + photo.getIn(['data', 'posY']);
+            console.log(position)
             console.log(size);
             return h('div', {key:index, className : size }, 
-              h('img', {src:path}, )
+              h('img', {src:path, style: {objectPosition : position}}, )
               );
             })
           )
