@@ -60,12 +60,15 @@
       },
       render: function() {
         // const separator = this.props.field.get('separator', ', ');
-        var value = this.props.value;
+        let value = this.props.value;
         return h('input', {
           id: this.props.forID,
           className: this.props.classNameWrapper, 
           type: 'range',
           value: value ? value : 50,
+          onInput: this.handleChange,
+          oninput: this.handleChange,
+          onchance: this.handleChange,
           onChange: this.hanleChange,
         });
       },
