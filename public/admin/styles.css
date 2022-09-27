@@ -1,15 +1,14 @@
 html, body {
+    background-color: hsl(205, 13%, 33%);
     width : 100vw;
     box-sizing: border-box;
 }
 .container-desktop {
-    background-color: hsl(205, 13%, 33%);
     width: 100%;
     max-width : 800px;
     margin: 0 auto;
 }
 .container-mobile {
-    background-color: hsl(205, 13%, 33%);
     width: 100%;
     max-width : 320px;
     margin: 0 auto;
@@ -29,7 +28,7 @@ html, body {
     gap: .5rem;
 }
 
-.picsContainer div > img {
+.picsContainer-2 div > img, .picsContainer-3 div > img {
     object-fit: cover;
     max-width: 100%;
     min-height: 400px;

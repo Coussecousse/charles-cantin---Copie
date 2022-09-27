@@ -53,11 +53,11 @@ const getGalleryImages = (path, list, fileName) => {
                         })
                         return obj;
                     }
-                }
-                
+                }                
                 const lines = contents.split('\n');
                 const metadataIndices = lines.reduce(getMetadataIndices, []);
                 metadata = parseMetadata({lines, metadataIndices});
+                console.log(metadata);
                 switch(fileName) {
                     case 'gallery': 
                         object  = {
