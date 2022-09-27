@@ -1,4 +1,5 @@
 ---
+mobile: true
 images:
   - posX: 53
     posY: 50
