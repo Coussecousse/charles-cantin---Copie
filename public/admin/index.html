@@ -52,9 +52,38 @@
         )   
       }
     })
+    const RangeControl = createClass({
+      handleChange: function(e){
+        // const separator = this.props.field.get('separator', ', ')
+        this.props.onChange(e.target.value)
+        console.log(e.target.value);
+      },
+      render: function() {
+        // const separator = this.props.field.get('separator', ', ');
+        var value = this.props.value;
+        return h('input', {
+          id: this.props.forID,
+          className: this.props.classNameWrapper, 
+          type: 'range',
+          value: value ? value : 50,
+          onChange: this.hanleChange,
+        });
+      },
+    });
 
+    const RangePreview = createClass({
+      render: function() {
+        return h('div', {}, this.props.value);
+      }
+    });
+    const schema = {
+      properties: {
+        separator: {type: 'string'},
+      },
+    }
     // photo.getIn['data', 'alt']
     // {"className": size(photo.getIn(['data', 'size']))}
+    CMS.registerWidget('position', RangeControl);
     CMS.registerPreviewStyle("./styles.css");
     CMS.registerPreviewTemplate("gallerie", TemplateGallery);
   </script>
