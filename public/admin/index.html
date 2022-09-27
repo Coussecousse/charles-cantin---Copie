@@ -54,12 +54,10 @@
     })
     const RangeControl = createClass({
       handleChange: function(e){
-        // const separator = this.props.field.get('separator', ', ')
         this.props.onChange(e.target.value)
         console.log(e.target.value);
       },
       render: function() {
-        // const separator = this.props.field.get('separator', ', ');
         let value = this.props.value;
         return h('input', {
           id: this.props.forID,
@@ -74,7 +72,7 @@
 
     const RangePreview = createClass({
       render: function() {
-        return h('div', {}, this.props.value);
+        return h('p', {}, this.props.value);
       }
     });
     const schema = {
@@ -82,11 +80,11 @@
         separator: {type: 'string'},
       },
     }
-    // photo.getIn['data', 'alt']
-    // {"className": size(photo.getIn(['data', 'size']))}
+
     CMS.registerWidget('position', RangeControl, RangePreview);
     CMS.registerPreviewStyle("./styles.css");
     CMS.registerPreviewTemplate("gallerie", TemplateGallery);
+
   </script>
 </body>
 </html>

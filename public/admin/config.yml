@@ -14,6 +14,7 @@ collections:
     delete: false
     identifier_field: "Photos"
     fields:
+      - {label: Mobile, name: mobile, widget: boolean, default: false}
       - label: "Images"
         name: "images"
         widget: list
