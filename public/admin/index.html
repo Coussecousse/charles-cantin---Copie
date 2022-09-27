@@ -22,28 +22,35 @@
             return "size-3";
       }
     }
+    function getContainerClassName(mobile) {
+      if (mobile){
+        return "container-mobile";
+      } else {
+        return "container-desktop";
+      }
+    }
+    function getPicContainerClassName(mobile) {
+      if (mobile) {
+        return "picsContainer-2";
+      } else {
+        return "picsContainer-3";
+      }
+    }
 
     const TemplateGallery = createClass({
       render: function() {
         let entry = this.props.entry
-        console.log(this.props.entry);
-        let image = entry.getIn(['data','images']);
-        console.log('image', image);
-        let pic = image.getIn(['images', 'pic']);
-        console.log('pic', pic);
-        let bg = this.props.getAsset(pic);
-        console.log('bg',bg);
+        let classNameContainer = getContainerClassName(entry.getIn(['data', 'mobile']));
+        let classNamePicContainer = getPicContainerClassName(entry.getIn(['data', 'mobile']))
+        return h('div', { className  : classNameContainer},
 
-        return h('div', { className  : "container"},
-
-          h('div', { className :"picsContainer"},
+          h('div', { className : classNamePicContainer},
           this.props.widgetsFor('images').map(function(photo, index) {
-            console.log(photo)
+            
             let path = photo.getIn(['data', 'pic']);
             let size = getSize(photo.getIn(['data', 'size']));
             let position = photo.getIn(['data','posX']) + '% ' + photo.getIn(['data', 'posY']) + '%';
-            console.log(position)
-            console.log(size);
+
             return h('div', {key:index, className : size }, 
               h('img', {src:path, style: {objectPosition : position}}, )
               );

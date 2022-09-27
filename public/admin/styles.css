@@ -2,12 +2,24 @@ html, body {
     width : 100vw;
     box-sizing: border-box;
 }
-.container {
+.container-desktop {
+    width: 100%;
+    max-width : 800px;
+    margin: 0 auto;
+}
+.container-mobile {
     width: 100%;
     max-width : 320px;
     margin: 0 auto;
 }
-.picsContainer {
+.picsContainer-3 {
+    margin: 2rem 0;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: .5rem;
+}
+.picsContainer-2 {
     margin: 2rem 0;
     display:grid;
     grid-template-columns: repeat(2, 1fr);
