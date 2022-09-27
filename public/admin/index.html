@@ -12,12 +12,13 @@
   <script>
     function getSize(photo){
       console.log(photo)
+      console.log(typeof photo)
       switch(photo){
-        case '3/3' : 
+        case '3/3\r' : 
             return "size-3";
-        case '2/3' : 
+        case '2/3\r' : 
             return "size-2";
-        case '1/3': 
+        case '1/3\r': 
             return "size-1";
         default:
             return "size-3";
