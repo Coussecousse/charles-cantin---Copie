@@ -37,12 +37,12 @@ const getGalleryImages = (path, list, fileName) => {
         };
         let ilist = [];
         files.forEach((file, i) => {
-            let obj = {};
+            let obj;
             fs.readFile(`${path}/${file}`, "utf8", (err, contents) => {
                 const getMetadataIndices = (acc, element, i) => {
-                    if (fileName == "gallery") {
-                        if (/^- /.test(element)) {
-                            acc.push(i);
+                    if (fileName === "gallery") {
+                        if (/^\s*-\s*/.test(element)){
+                            acc.push(i-1);
                         }
                     } else {
                         if (/^---/.test(element)) {
@@ -53,32 +53,52 @@ const getGalleryImages = (path, list, fileName) => {
                 }
                 const parseMetadata = ({lines, metadataIndices}) => {
                     if (metadataIndices.length > 0) {
-                        let metadata = lines.slice(metadataIndices[0] + 1, metadataIndices[1]);
-                        metadata.forEach(line => {
-                            obj[line.split(' : ')[0]] = line.split(': ')[1];
-                        })
+                        if (fileName === "gallery") {
+                            obj = []
+                            let metadatas = [];
+                            let container = {};
+
+                            for (let i = 1; i < metadataIndices.length - 1; i++){
+                                metadatas.push(lines.slice(metadataIndices[i] + 1, metadataIndices[i + 1]));
+                            }
+
+                            metadatas.forEach(metadata => {
+                                metadata.forEach(line => {
+                                    line = line.slice(4);
+                                    container[line.split(': ')[0]] = line.split(': ')[1];
+                                })
+                            obj.push({...container})
+                            })
+
+                        } else {
+                            obj = {};
+                            let metadata = lines.slice(metadataIndices[0] + 1, metadataIndices[1]);
+
+                            metadata.forEach(line => {
+                                obj[line.split(': ')[0]] = line.split(': ')[1];
+                            })
+                        }
                         return obj;
                     }
                 }                
                 const lines = contents.split('\n');
                 const metadataIndices = lines.reduce(getMetadataIndices, []);
                 metadata = parseMetadata({lines, metadataIndices});
-                console.log(metadata);
+                console.log('METADATA', metadata);
                 switch(fileName) {
                     case 'gallery': 
-                        object  = {
-                            id : uuidv4(),
-                            pic : metadata.pic,
-                            alt : metadata.alt,
-                            categories : metadata.categorie,
-                            size : metadata.size,
-                            posX : metadata.posX,
-                            posY : metadata.posY,
-                            posXMobile : metadata.posXMobile,
-                            posYMobile : metadata.posYMobile,
-                            placeRow : metadata.placeRow,
-                            placeColumn : metadata.placeColumn
-                        };
+                    for (let data of metadata) {
+                        let object = {
+                            id  : uuidv4(),
+                            pic : data.pic,
+                            alt : data.alt,
+                            categories : data.categorie,
+                            size : data.size,
+                            posX : data.posX,
+                            posY : data.posY,
+                        }
+                        list.push(object);
+                    }
                         break;
                     case 'services' : 
                         object = {
@@ -93,6 +113,7 @@ const getGalleryImages = (path, list, fileName) => {
                             price : metadata.price,
                             content : metadata.content,
                         }
+                        list.push(object);
                         break;
                     case 'global' : 
                         let pos = [metadata.posXMobileHome, metadata.posYMobileHome].join(' ')
@@ -110,11 +131,11 @@ const getGalleryImages = (path, list, fileName) => {
                             posXMobileContact : metadata.posXMobileContact,
                             posYMobileContact : metadata.posYMobileContact,
                         }
+                        list.push(object);
                         break;
                     default : 
                         console.log('Error in json files');
                 }
-                list.push(object);
                 ilist.push(i);
                 if (ilist.length == files.length) {
                     let data = JSON.stringify(list);
