@@ -12,8 +12,8 @@ collections:
     folder: "data/gallery-test"
     create: false
     delete: false
-    identifier_field: pic
     fields:
+      - {label: Titre, name: title, widget: hidden, default: "Photos", required: false}
       - {label: Mobile, name: mobile, widget: boolean, default: false}
       - label: "Images"
         name: "images"
