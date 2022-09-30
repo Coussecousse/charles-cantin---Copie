@@ -126,10 +126,10 @@
               color: '#fff'
             }
           return h('div', {key:index, className:size, style: styleDiv}, 
-                  h('h1', {style: {textAlign: 'center', color: card.getIn(['data', 'colorTitle'])}}, card.getIn(['data', 'title'])),
-                  h('div', {style: {textAlign: 'center'}}, 
-                    h('p', {}, card.getIn(['data', 'price'])),
-                    h('p', {}, card.getIn(['data', 'content']))
+                  h('h1', {style: {textAlign: 'center', color: card.getIn(['data', 'colorTitle']), textTransform: 'uppercase', fontSize: '1.5rem'}}, card.getIn(['data', 'title'])),
+                  h('div', {style: {textAlign: 'center' }}, 
+                    h('p', {style: {fontSize: '2rem'}}, card.getIn(['data', 'price'])),
+                    h('p', {style: {fontSize: '1.25rem'}}, card.getIn(['data', 'content']))
                   )
                 )
           
