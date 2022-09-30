@@ -8,18 +8,17 @@ public_folder: /images
 collections:
   - name: "gallerie"
     label: "Gallerie"
-    folder: "data/gallery-test"
     create: false
     delete: false
     identifier_field: "Photos"
-    fields:
-      - {label: Mobile, name: mobile, widget: boolean, default: false}
-      - label: Photos
-        name: photos
-        widget: list
+    files:
+      - label: Photos de la gallerie
+        name: allPics
+        file: "data/gallery/gallery.md"
         fields:
+          - {label: Mobile, name: mobile, widget: boolean, default: false}
           - label: "Images"
-            name: "images"
+            name: pics
             widget: list
             fields: 
               - {label: Photo, name: pic, widget: image, allow_multiple: false}
