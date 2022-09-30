@@ -3,6 +3,10 @@ html, body {
     width : 100vw;
     box-sizing: border-box;
 }
+p {
+    margin: 0;
+    padding: 0;
+}
 .container-desktop {
     width: 100%;
     max-width : 800px;
