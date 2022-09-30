@@ -11,12 +11,13 @@ collections:
     folder: "data/gallery-test"
     create: false
     delete: false
+    identifier_field: "Photos"
     fields:
+      - {label: Mobile, name: mobile, widget: boolean, default: false}
       - label: Photos
         name: photos
         widget: list
         fields:
-          - {label: Mobile, name: mobile, widget: boolean, default: false}
           - label: "Images"
             name: "images"
             widget: list
