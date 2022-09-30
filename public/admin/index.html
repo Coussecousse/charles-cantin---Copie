@@ -152,7 +152,7 @@
             return h('div', {key:index, className:size, style: styleDiv}, 
                     h('h1', {style: {color: card.getIn(['data', 'colorTitle']), textTransform: 'uppercase', fontSize: '1.5rem'}}, card.getIn(['data', 'title'])),
                     h('div', {id:"contentContainer", style: styleContentContainer}, 
-                      h('p', {style: {fontSize: 'clamp(1.5rem, 0.875rem + 2%, 2rem)'}}, card.getIn(['data', 'price'])),
+                      h('p', {style: entry.getIn(['data', 'mobile']) ? {fontSize: '1.5rem'} : {fontSize: '2rem'}}, card.getIn(['data', 'price'])),
                       h('p', {style: entry.getIn(['data', 'mobile']) ? {fontSize: '1rem'} : {fontSize: '1.25rem'}}, card.getIn(['data', 'content']))
                     )
                   )
