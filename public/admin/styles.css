@@ -30,7 +30,7 @@ p {
     grid-template-columns: repeat(2, 1fr);
 }
 .servicesContainer-1 {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
     gap: .5rem;
 }
 .servicesContainer-2 #contentContainer {
