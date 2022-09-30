@@ -109,8 +109,7 @@
         let classNameContainer = getContainerClassName(entry.getIn(['data', 'mobile']));
         let classNameCardsContainer = getCardsContainersClassName(entry.getIn(['data', 'mobile']));
 
-        return 
-        h('div', {className : classNameContainer}, 
+        return h('div', {className : classNameContainer}, 
           h('div', {style: {display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '.5rem', width: '300px', textAlign: 'center', margin: '0 auto'}}, 
             h('div', {}, 
               h('div', {className: 'circle', style: {backgroundColor: '#323f43'},  }),
@@ -154,7 +153,7 @@
                     h('h1', {style: {color: card.getIn(['data', 'colorTitle']), textTransform: 'uppercase', fontSize: '1.5rem'}}, card.getIn(['data', 'title'])),
                     h('div', {id:"contentContainer", style: styleContentContainer}, 
                       h('p', {style: {fontSize: 'clamp(1.5rem, 0.875rem + 2vw, 2rem)'}}, card.getIn(['data', 'price'])),
-                      h('p', {style: {fontSize: 'clamp(0.875rem, 0.4063rem + 1.5vw, 1.25rem)'}}, card.getIn(['data', 'content']))
+                      h('p', {style: {fontSize: 'clamp(0.875rem, 0.4063rem + 1.5%, 1.25rem)'}}, card.getIn(['data', 'content']))
                     )
                   )
           }))
