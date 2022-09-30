@@ -42,6 +42,7 @@
         let entry = this.props.entry;
         let classNameContainer = getContainerClassName(entry.getIn(['data', 'mobile']));
         let classNamePicContainer = getPicContainerClassName(entry.getIn(['data', 'mobile']));
+        console.log(entry)
         return h('div', { className  : classNameContainer},
 
           h('div', { className : classNamePicContainer},
