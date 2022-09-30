@@ -117,9 +117,10 @@
               justifyContent: 'space-between',
               background: 'url("' + card.pic + '")'
             }
-            return h('div', {key:index, className : size},
-                    h('h2', {style: {textAlign: 'center'}}, card.getIn(['data','title'])),
-                    )
+            return h('h1', {}, "test")
+            // return h('div', {key:index, className : size, style: { styleDiv }},
+            //         h('h2', {style: {textAlign: 'center'}}, card.getIn(['data','title'])),
+            //         )
           }))
       }
     })
