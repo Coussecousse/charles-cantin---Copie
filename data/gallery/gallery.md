@@ -15,4 +15,11 @@ pics:
     size: 1/3
     catégories:
       - Couple
+  - posX: 50
+    posY: 50
+    pic: /images/evenement-bapteme1.jpg
+    alt: bebe
+    catégories:
+      - bebe
+    size: 1/3
 ---
