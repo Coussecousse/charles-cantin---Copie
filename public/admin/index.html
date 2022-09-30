@@ -46,6 +46,13 @@
         return "picsContainer-3";
       }
     }
+    function getCardsContainersClassName(mobile) {
+      if(mobile) {
+        return "servicesContaines-1";
+      } else {
+        return "servicesContainer-2";
+      }
+    }
 
     const TemplateGallery = createClass({
       render: function() {
@@ -100,9 +107,10 @@
       render: function() {
         let entry = this.props.entry;
         let classNameContainer = getContainerClassName(entry.getIn(['data', 'mobile']));
+        let classNameCardsContainer = getCardsContainersClassName(entrey.getIn(['data', 'mobile']));
         return h('div', {className : classNameContainer}, 
         h('h1', {}, "test de merde"),
-        h('div', {}, 
+        h('div', {className : classNameCardsContainer}, 
         this.props.widgetsFor('services').map(function(card, index) {
           let path = card.getIn(['data', 'pic']);
           let size = getSizeServices(card.getIn(['data', 'size']));
