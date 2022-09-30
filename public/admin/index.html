@@ -10,7 +10,7 @@
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   <script>
-    function getSize(photo){
+    function getSizePics(photo){
       switch(photo){
         case '3/3' :
             return "size-3";
@@ -20,6 +20,16 @@
             return "size-1";
         default:
             return "size-3";
+      }
+    }
+    function getSizeServices(card){
+      switch(card){
+        case '2/2' :
+            return "size-2";
+        case '1/2': 
+            return "size-1";
+        default:
+            return "size-2";
       }
     }
     function getContainerClassName(mobile) {
@@ -42,16 +52,13 @@
         let entry = this.props.entry;
         let classNameContainer = getContainerClassName(entry.getIn(['data', 'mobile']));
         let classNamePicContainer = getPicContainerClassName(entry.getIn(['data', 'mobile']));
-        console.log(entry)
         return h('div', { className  : classNameContainer},
 
           h('div', { className : classNamePicContainer},
           this.props.widgetsFor('pics').map(function(photo, index) {
-            console.log(photo);
             let path = photo.getIn(['data', 'pic']);
-            let size = getSize(photo.getIn(['data', 'size']));
+            let size = getSizePics(photo.getIn(['data', 'size']));
             let position = photo.getIn(['data','posX']) + '% ' + photo.getIn(['data', 'posY']) + '%';
-
             return h('div', {key:index, className : size }, 
               h('img', {src:path, style: {objectPosition : position}}, )
               );
@@ -89,7 +96,28 @@
       },
     }
 
-    CMS.registerWidget('position', RangeControl, RangePreview);
+    const TemplateServices = createClass({
+      render: function() {
+        let entry = this.props.entry;
+        let classNameContainer = getContainerClassName(entry.getIn(['data', 'mobile']));
+        return h('div', {className : classNameContainer}, 
+          h('div'), {},
+          this.props.widgetsFor('services').map(function(card, index) {
+            let path = card.getIn(['data', 'pic']);
+            let size = getSizeServices(card.getIn(['data', 'size']));
+            let position = card.getIn(['data', 'posX']) + '% ' + card.getIn(['data', 'posY']) + '%';
+            let styleDiv = {
+              objectPosition: position,
+              maxHeight: '465px',
+              position: relative
+            }
+            return h('div', {key:index, className : size, style: { styleDiv }},
+                    h('h2', {style: {position: 'relative', top: '0', left:'50%', transform: 'translateX(-50%)'}}, card.getInt(['data','title'])),
+                    )
+          }))
+      }
+    })
+    CMS.registerWidget('position', RangeControl);
     CMS.registerPreviewStyle("./styles.css");
     CMS.registerPreviewTemplate("gallery", TemplateGallery);
 

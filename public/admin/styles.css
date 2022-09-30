@@ -13,19 +13,18 @@ html, body {
     max-width : 320px;
     margin: 0 auto;
 }
-.picsContainer-3 {
+.picsContainer-3, .picsContainer-2, .servicesContainer-2, .servicesContainer-1 {
     margin: 2rem 0;
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     gap: .5rem;
 }
-.picsContainer-2 {
-    margin: 2rem 0;
-    display:grid;
+.picsContainer-2, .servicesContainer-2 {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    gap: .5rem;
+}
+.servicesContainer-1 {
+    grid-template-columns: repeat(1, 1fr);
 }
 
 .picsContainer-2 div > img, .picsContainer-3 div > img {
