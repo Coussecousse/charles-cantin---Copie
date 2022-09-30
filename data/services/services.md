@@ -31,7 +31,7 @@ services:
     posY: "0"
     colorTitle: "#ffffff"
     title: bébé
-    price: 100
+    price: 100€
     content: Photo d’enfant jusqu’à 3 ans (photo à domicile)
     size: 1/2
     pic: /images/bebe1.jpg
