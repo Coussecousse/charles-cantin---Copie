@@ -103,6 +103,7 @@
         return h('div', {className : classNameContainer}, 
           h('div'), {},
           this.props.widgetsFor('services').map(function(card, index) {
+            console.log(card)
             let path = card.getIn(['data', 'pic']);
             let size = getSizeServices(card.getIn(['data', 'size']));
             let position = card.getIn(['data', 'posX']) + '% ' + card.getIn(['data', 'posY']) + '%';
