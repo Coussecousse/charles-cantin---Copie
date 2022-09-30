@@ -154,7 +154,7 @@
                     h('h1', {style: {color: card.getIn(['data', 'colorTitle']), textTransform: 'uppercase', fontSize: '1.5rem'}}, card.getIn(['data', 'title'])),
                     h('div', {id:"contentContainer", style: styleContentContainer}, 
                       h('p', {style: {fontSize: 'clamp(1.5rem, 0.875rem + 2vw, 2rem)'}}, card.getIn(['data', 'price'])),
-                      h('p', {style: {fontSize: 'clamp(0.875rem, 0.4063rem + 1.5%, 1.25rem)'}}, card.getIn(['data', 'content']))
+                      h('p', {style: {fontSize: 'clamp(0.875rem, 0.4063rem + 1.5vw, 1.25rem)'}}, card.getIn(['data', 'content']))
                     )
                   )
           }))
