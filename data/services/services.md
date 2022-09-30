@@ -24,7 +24,7 @@ services:
     price: 220€
     content: Pour la famille ou les amis jusqu’à 4 personnes, en extérieur ou en
       studio 30 euros en supplément par personne au-delà de 4 (hormis enfant
-      jusqu’à 2 ans)
+      jusqu’à 2 ans)laaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     pic: /images/famille3.jpg
     size: 2/2
   - posX: 50
