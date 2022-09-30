@@ -36,7 +36,7 @@ collections:
         name: services
         file: "data/services/services.md"
         fields:
-        - {label: Mobile, name: mobile, widget: boolean, default: false}
+        - {label: Mobile, name: mobile, widget: boolean, default: false, required: false}
         - label: Prestations
           name: services
           widget: list

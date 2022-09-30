@@ -122,10 +122,15 @@
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              background: 'url("' + card.pic + '")'
+              background: 'url("' + path + '")'
             }
           return h('div', {key:index, className:size, style: styleDiv}, 
-                  h('h1', {}, card.getIn(['data', 'title'])))
+                  h('h1', {style: {textAlign: 'center'}}, card.getIn(['data', 'title'])),
+                  h('div', {style: {textAlign: 'center'}}, 
+                    h('p', {}, card.getIn(['data', 'price'])),
+                    h('p', {}, card.getIn(['data', 'content']))
+                  )
+                )
           
         }))
           // h('div'), {},
