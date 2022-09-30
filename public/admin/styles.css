@@ -17,7 +17,7 @@ p {
     max-width : 320px;
     margin: 0 auto;
 }
-.picsContainer-3, .picsContainer-2, .servicesContainer-2, .servicesContainer-1 {
+.picsContainer-3, .picsContainer-2, .servicesContainer-2 {
     margin: 2rem 0;
     display:grid;
     grid-template-rows: auto;
@@ -30,6 +30,7 @@ p {
     grid-template-columns: repeat(2, 1fr);
 }
 .servicesContainer-1 {
+    margin: 2rem 0;
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -38,7 +39,9 @@ p {
     height: 146px;
 }
 .servicesContainer-1 #contentContainer {
-    height: 101px;
+    max-height: 171px;
+    height: 40%;
+    min-height: 101px;
 }
 
 .picsContainer-2 div > img, .picsContainer-3 div > img {
