@@ -107,7 +107,7 @@
       render: function() {
         let entry = this.props.entry;
         let classNameContainer = getContainerClassName(entry.getIn(['data', 'mobile']));
-        let classNameCardsContainer = getCardsContainersClassName(entrey.getIn(['data', 'mobile']));
+        let classNameCardsContainer = getCardsContainersClassName(entry.getIn(['data', 'mobile']));
         return h('div', {className : classNameContainer}, 
         h('h1', {}, "test de merde"),
         h('div', {className : classNameCardsContainer}, 
