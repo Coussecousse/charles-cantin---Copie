@@ -13,7 +13,7 @@ collections:
     identifier_field: "Photos"
     files:
       - label: Photos de la gallerie
-        name: galllery
+        name: gallery
         file: "data/gallery/gallery.md"
         fields:
           - {label: Mobile, name: mobile, widget: boolean, default: false}
