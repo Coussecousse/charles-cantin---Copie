@@ -101,27 +101,28 @@
         let entry = this.props.entry;
         let classNameContainer = getContainerClassName(entry.getIn(['data', 'mobile']));
         return h('div', {className : classNameContainer}, 
-          h('div'), {},
-          this.props.widgetsFor('services').map(function(card, index) {
-            console.log(card)
-            let path = card.getIn(['data', 'pic']);
-            console.log(path)
-            let size = getSizeServices(card.getIn(['data', 'size']));
-            let position = card.getIn(['data', 'posX']) + '% ' + card.getIn(['data', 'posY']) + '%';
-            let styleDiv = {
-              objectPosition: position,
-              maxHeight: '465px',
-              height: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              background: 'url("' + card.pic + '")'
-            }
-            return h('h1', {}, "test")
-            // return h('div', {key:index, className : size, style: { styleDiv }},
-            //         h('h2', {style: {textAlign: 'center'}}, card.getIn(['data','title'])),
-            //         )
-          }))
+        h('h1', {}, "test de merde")
+          // h('div'), {},
+          // this.props.widgetsFor('services').map(function(card, index) {
+          //   console.log(card)
+          //   let path = card.getIn(['data', 'pic']);
+          //   console.log(path)
+          //   let size = getSizeServices(card.getIn(['data', 'size']));
+          //   let position = card.getIn(['data', 'posX']) + '% ' + card.getIn(['data', 'posY']) + '%';
+          //   let styleDiv = {
+          //     objectPosition: position,
+          //     maxHeight: '465px',
+          //     height: '100%',
+          //     display: 'flex',
+          //     flexDirection: 'column',
+          //     justifyContent: 'space-between',
+          //     background: 'url("' + card.pic + '")'
+          //   }
+          //   return h('h1', {}, "test")
+          //   // return h('div', {key:index, className : size, style: { styleDiv }},
+          //   //         h('h2', {style: {textAlign: 'center'}}, card.getIn(['data','title'])),
+          //   //         )
+          // }))
       }
     })
     CMS.registerWidget('position', RangeControl);
