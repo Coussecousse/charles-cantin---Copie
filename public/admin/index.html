@@ -116,13 +116,13 @@
           let size = getSizeServices(card.getIn(['data', 'size']));
           let position = card.getIn(['data', 'posX']) + '% ' + card.getIn(['data', 'posY']) + '%';
           let styleDiv = {
-              objectPosition: position,
+              backgroundImage: 'url("' + path + '")',
+              backgroundPosition: position,
               maxHeight: '465px',
               height: '100%',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'space-between',
-              background: 'url("' + path + '")'
+              justifyContent: 'space-between'
             }
           return h('div', {key:index, className:size, style: styleDiv}, 
                   h('h1', {style: {textAlign: 'center'}}, card.getIn(['data', 'title'])),
