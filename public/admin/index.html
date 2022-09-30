@@ -110,7 +110,7 @@
         let classNameCardsContainer = getCardsContainersClassName(entry.getIn(['data', 'mobile']));
 
         return h('div', {className : classNameContainer}, 
-        h('div', {style: {display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '.5rem', width: '300px', textAlign: 'center'}}, 
+        h('div', {style: {display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '.5rem', width: '300px', textAlign: 'center', margin: '0 auto'}}, 
           h('div', {}, 
             h('div', {className: 'circle', style: {backgroundColor: '#323f43'},  }),
             h('p', {style: {color: 'white'}}, '#323f43' )
@@ -141,7 +141,7 @@
               textAlign : 'center'
             }
             let styleContentContainer = {
-              backgroundColor: 'hsl(195, 14%, 23%, 50%', 
+              backgroundColor: 'hsl(195, 14%, 23%, 50%)', 
               backdropFilter: 'blur(2px)',
               display: 'flex',
               flexDirection: 'column',
