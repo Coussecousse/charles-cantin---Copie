@@ -13,4 +13,6 @@ pics:
     pic: /images/couple1.jpg
     alt: Couple
     size: 1/3
+    catégories:
+      - Couple
 ---
