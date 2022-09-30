@@ -1,5 +1,5 @@
 ---
-mobile: false
+mobile: true
 services:
   - posX: 50
     posY: 50
