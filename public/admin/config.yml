@@ -42,7 +42,7 @@ collections:
           widget: list
           fields : 
             - {label: Titre, name: title, widget: string}
-            - {label: Prix, name: price, widget: number}
+            - {label: Prix, name: price, widget: string}
             - {label: Description, name: content, widget: string, }
             - {label: Background-Photo, name: pic, widget: image, allow_multiple: false}
             - {label: Size, name: size, widget: select, options: [1/2, 2/2]}

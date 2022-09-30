@@ -130,7 +130,7 @@
           return h('div', {key:index, className:size, style: styleDiv}, 
                   h('h1', {style: {color: card.getIn(['data', 'colorTitle']), textTransform: 'uppercase', fontSize: '1.5rem'}}, card.getIn(['data', 'title'])),
                   h('div', {style: {backgroundColor: 'hsl(195, 14%, 23%, 50%', backdropFilter: 'blur(2px)'}}, 
-                    h('p', {style: {fontSize: '2rem'}}, card.getIn(['data', 'price']) + '€'),
+                    h('p', {style: {fontSize: '2rem'}}, card.getIn(['data', 'price'])),
                     h('p', {style: {fontSize: '1.25rem'}}, card.getIn(['data', 'content']))
                   )
                 )
