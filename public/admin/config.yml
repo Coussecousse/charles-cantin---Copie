@@ -8,7 +8,6 @@ public_folder: /images
 collections:
   - name: "gallerie"
     label: "Gallerie"
-    widget: "list"
     folder: "data/gallery-test"
     create: false
     delete: false
