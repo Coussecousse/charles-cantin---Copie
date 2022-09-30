@@ -46,7 +46,7 @@ services:
   - posX: "65"
     posY: "49"
     colorTitle: "#000000"
-    title: J’IMMORTALISE L’ÉVÉNEMENT
+    title: J'immortalise l'évènement
     price: Sur mesure
     content: Prestation de mariage ou baptême sur devis
     pic: /images/evenement-mariage1.jpg
