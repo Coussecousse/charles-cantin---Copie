@@ -30,7 +30,8 @@ p {
     grid-template-columns: repeat(2, 1fr);
 }
 .servicesContainer-1 {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: .5rem;
 }
 .servicesContainer-2 #contentContainer {
@@ -59,5 +60,6 @@ p {
     border-radius: 50%;
     width: 100px;
     height: 100px;
+    margin-bottom: .5rem;
     border: solid 1px white;
 }
