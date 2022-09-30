@@ -107,7 +107,7 @@
           let path = card.getIn(['data', 'pic']);
           let size = getSizeServices(card.getIn(['data', 'size']));
           let position = card.getIn(['data', 'posX']) + '% ' + card.getIn(['data', 'posY']) + '%';
-          return h('div', {key:index}, 
+          return h('div', {key:index, className:size}, 
                   h('h1', {}, card.getIn(['data', 'title'])))
           
         }))
