@@ -12,9 +12,9 @@ collections:
     folder: "data/gallery-test"
     create: false
     delete: false
-    identifier_field: title
+    identifier_field: "title"
     fields:
-      - {label: Titre, name: title, widget: hidden, default: "Photos", required: false}
+      - {label: Titre, name: title, widget: string, default: "Photos", required: false}
       - {label: Mobile, name: mobile, widget: boolean, default: false}
       - label: "Images"
         name: "images"
