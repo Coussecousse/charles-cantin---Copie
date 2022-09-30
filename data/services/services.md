@@ -16,7 +16,7 @@ services:
     content: Portrait pour une personne
     pic: /images/portrait1.jpg
     size: 1/2
-    colorTitle: "#b75757"
+    colorTitle: "#323e42"
   - posX: "49"
     posY: "49"
     title: Pour deux
