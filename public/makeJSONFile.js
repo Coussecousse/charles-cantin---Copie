@@ -41,8 +41,9 @@ const getGalleryImages = (path, list, fileName) => {
             fs.readFile(`${path}/${file}`, "utf8", (err, contents) => {
                 const getMetadataIndices = (acc, element, i) => {
                     if (fileName === "gallery") {
-                        if (/^\s*-\s*/.test(element)){
-                            acc.push(i-1);
+                        
+                        if (/^\s*-\s*/.test(element) && !(/^\s\s\s\s*-\s*/.test(element))){
+                                acc.push(i-1)
                         }
                     } else {
                         if (/^---/.test(element)) {
@@ -57,15 +58,22 @@ const getGalleryImages = (path, list, fileName) => {
                             obj = []
                             let metadatas = [];
                             let container = {};
+                            let categoriesTab = [];
 
                             for (let i = 1; i < metadataIndices.length - 1; i++){
-                                metadatas.push(lines.slice(metadataIndices[i] + 1, metadataIndices[i + 1]));
+                                metadatas.push(lines.slice(metadataIndices[i] + 1, metadataIndices[i + 1] + 1));
                             }
-
                             metadatas.forEach(metadata => {
                                 metadata.forEach(line => {
                                     line = line.slice(4);
-                                    container[line.split(': ')[0]] = line.split(': ')[1];
+                                    if (line !== 'catégories:\r'){
+                                        if (line.includes('  - ')) {
+                                            categoriesTab.push(line.slice(4));
+                                            container.categories = categoriesTab;
+                                        } else {
+                                            container[line.split(': ')[0]] = line.split(': ')[1];
+                                        }
+                                    }
                                 })
                             obj.push({...container})
                             })
@@ -84,7 +92,6 @@ const getGalleryImages = (path, list, fileName) => {
                 const lines = contents.split('\n');
                 const metadataIndices = lines.reduce(getMetadataIndices, []);
                 metadata = parseMetadata({lines, metadataIndices});
-                console.log('METADATA', metadata);
                 switch(fileName) {
                     case 'gallery': 
                     for (let data of metadata) {
@@ -92,7 +99,7 @@ const getGalleryImages = (path, list, fileName) => {
                             id  : uuidv4(),
                             pic : data.pic,
                             alt : data.alt,
-                            categories : data.categorie,
+                            categories : data.categories,
                             size : data.size,
                             posX : data.posX,
                             posY : data.posY,
