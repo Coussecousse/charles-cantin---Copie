@@ -118,7 +118,7 @@
               background: 'url("' + card.pic + '")'
             }
             return h('div', {key:index, className : size, style: { styleDiv }},
-                    h('h2', {style: {textAlign: 'center'}}, card.getInt(['data','title'])),
+                    h('h2', {style: {textAlign: 'center'}}, card.getIn(['data','title'])),
                     )
           }))
       }
