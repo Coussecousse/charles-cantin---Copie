@@ -33,6 +33,12 @@ p {
     grid-template-columns: repeat(1, 1fr);
     gap: .5rem;
 }
+.servicesContainer-2 #contentContainer {
+    height: 146px;
+}
+.servicesContainer-1 #contentContainer {
+    height: 101px;
+}
 
 .picsContainer-2 div > img, .picsContainer-3 div > img {
     object-fit: cover;
@@ -48,3 +54,4 @@ p {
 .size-3 {
     grid-column: span 3;
 }
+

@@ -48,7 +48,7 @@
     }
     function getCardsContainersClassName(mobile) {
       if(mobile) {
-        return "servicesContaines-1";
+        return "servicesContainer-1";
       } else {
         return "servicesContainer-2";
       }
@@ -139,10 +139,17 @@
               color: '#fff',
               textAlign : 'center'
             }
+            let styleContentContainer = {
+              backgroundColor: 'hsl(195, 14%, 23%, 50%', 
+              backdropFilter: 'blur(2px)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-evenly'
+            }
 
           return h('div', {key:index, className:size, style: styleDiv}, 
                   h('h1', {style: {color: card.getIn(['data', 'colorTitle']), textTransform: 'uppercase', fontSize: '1.5rem'}}, card.getIn(['data', 'title'])),
-                  h('div', {style: {backgroundColor: 'hsl(195, 14%, 23%, 50%', backdropFilter: 'blur(2px)'}}, 
+                  h('div', {id:"contentContainer", style: styleContentContainer}, 
                     h('p', {style: {fontSize: '2rem'}}, card.getIn(['data', 'price'])),
                     h('p', {style: {fontSize: '1.25rem'}}, card.getIn(['data', 'content']))
                   )
