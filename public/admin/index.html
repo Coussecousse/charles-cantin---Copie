@@ -101,7 +101,16 @@
         let entry = this.props.entry;
         let classNameContainer = getContainerClassName(entry.getIn(['data', 'mobile']));
         return h('div', {className : classNameContainer}, 
-        h('h1', {}, "test de merde")
+        h('h1', {}, "test de merde"),
+        h('div', {}, 
+        this.props.widgetsFor('services').map(function(card, index) {
+          let path = card.getIn(['data', 'pic']);
+          let size = getSizeServices(card.getIn(['data', 'size']));
+          let position = position = card.getIn(['data', 'posX']) + '% ' + card.getIn(['data', 'posY']) + '%';
+          return h('div', {key:index}, 
+                  h('h1', {}, card.getIn(['data', 'title'])))
+          
+        }))
           // h('div'), {},
           // this.props.widgetsFor('services').map(function(card, index) {
           //   console.log(card)
