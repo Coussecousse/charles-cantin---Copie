@@ -39,14 +39,14 @@
 
     const TemplateGallery = createClass({
       render: function() {
-        let entry = this.props.entry
+        let entry = this.props.entry;
         let classNameContainer = getContainerClassName(entry.getIn(['data', 'mobile']));
-        let classNamePicContainer = getPicContainerClassName(entry.getIn(['data', 'mobile']))
+        let classNamePicContainer = getPicContainerClassName(entry.getIn(['data', 'mobile']));
         return h('div', { className  : classNameContainer},
 
           h('div', { className : classNamePicContainer},
-          this.props.widgetsFor('images').map(function(photo, index) {
-            
+          this.props.widgetsFor('pics').map(function(photo, index) {
+            console.log(photo);
             let path = photo.getIn(['data', 'pic']);
             let size = getSize(photo.getIn(['data', 'size']));
             let position = photo.getIn(['data','posX']) + '% ' + photo.getIn(['data', 'posY']) + '%';
